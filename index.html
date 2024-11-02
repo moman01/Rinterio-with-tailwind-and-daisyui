@@ -1,185 +1,712 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ranter</title>
     <!-- tailwind and daisy ui cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body class="bg-white">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-white">
     <header class="container px-3 lg:px-0 lg:w-4/5 lg:mx-auto pt-12">
-        <nav class="flex justify-between items-center">
-            <h1 class="flex items-center text-3xl font-extrabold text-[#212121]"><span class="bg-[#ABEF5F] rounded-full p-2 mr-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M12.007 2.05932L1.0033 13.0557" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M6.00728 1.18866C6.00728 1.18866 11.6409 0.715645 12.4957 1.57084C13.3503 2.42604 12.8734 8.05944 12.8734 8.05944" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg></span>  Rinterio</h1>
+      <nav class="flex justify-between items-center">
+        <h1
+          class="flex items-center text-3xl font-extrabold text-[#212121] cursor-pointer"
+        >
+          <span class="bg-[#ABEF5F] rounded-full p-2 mr-2.5"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+            >
+              <path
+                d="M12.007 2.05932L1.0033 13.0557"
+                stroke="#1C1C1C"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M6.00728 1.18866C6.00728 1.18866 11.6409 0.715645 12.4957 1.57084C13.3503 2.42604 12.8734 8.05944 12.8734 8.05944"
+                stroke="#1C1C1C"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg
+          ></span>
+          Rinterio
+        </h1>
 
-              <ul class="hidden  space-x-4 md:hidden lg:inline-flex ">
-                <li><a href="">Home</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Portfolio</a></li>
-                <li><a href="">Blogs</a></li>
-                <li><a href="">Contact Us</a></li>
-              </ul>
-              <div class="hidden lg:inline-flex  space-x-4 items-center ">
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                    <path d="M17.5075 17.5098L22.006 22.0113" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20.0096 11.0104C20.0113 6.03982 15.9832 2.00904 11.0126 2.00739C6.04207 2.00573 2.01129 6.03383 2.00964 11.0044C2.00799 15.975 6.03609 20.0057 11.0066 20.0074C15.9772 20.009 20.008 15.981 20.0096 11.0104Z" stroke="#737373" stroke-width="1.5" stroke-linejoin="round"/>
-                  </svg></span>
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <path d="M8.00795 16.028L15.2711 16.0304C19.7587 16.0319 20.4422 13.2129 21.2713 9.1015C21.5104 7.91561 21.63 7.32267 21.3431 6.92751C21.0561 6.53235 20.5058 6.53216 19.4052 6.5318L6.01111 6.52734" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M8.00795 16.0282L5.39083 3.54225C5.16855 2.65184 4.36878 2.02698 3.45105 2.02668L2.5126 2.02637" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M8.88797 16.0283L8.47653 16.0282C7.11318 16.0277 6.00758 17.1786 6.00711 18.5987C6.00703 18.8354 6.19117 19.0274 6.4184 19.0275L17.507 19.0312" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M10.506 22.0288C11.3344 22.0291 12.0062 21.3577 12.0065 20.5293C12.0067 19.7009 11.3354 19.0291 10.507 19.0288C9.67853 19.0285 9.00673 19.6999 9.00646 20.5283C9.00618 21.3567 9.67753 22.0285 10.506 22.0288Z" stroke="#737373" stroke-width="1.5"/>
-                        <path d="M17.506 22.0313C18.3344 22.0315 19.0062 21.3602 19.0065 20.5318C19.0067 19.7033 18.3354 19.0315 17.507 19.0313C16.6785 19.031 16.0067 19.7023 16.0065 20.5308C16.0062 21.3592 16.6775 22.031 17.506 22.0313Z" stroke="#737373" stroke-width="1.5"/>
-                      </svg>
-                  </span>
-                  <button class="btn text-black font-extrabold hover:bg-teal-500 border-none rounded-full bg-[#ABEF5F]">Book Consult <span class="bg-black rounded-full p-2 mr-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M12.0109 2.10278L1.00728 13.0991" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg></span></button>
-              </div>
-              <span class="sm:block lg:hidden  bg-white rounded-full p-2 border-[#737373] border-2 "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M3.74207 6.75781H20.2421M3.74207 12.0078H20.2421M3.74207 17.2578H20.2421" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg></span>
-        </nav>
-        <!-- banner  -->
-         <div class="flex flex-col space-y-6 justify-center items-center mt-14">
-          <img src="./assets/banner.png" alt="" srcset="" class=" max-w-full lg:max-w-max h-auto ">
-          <h1 class="max-w-screen-lg font-extrabold text-5xl lg:text-6xl text-center text-[#212121]  ">A barn house of this design has a striking appearance</h1>
-          <p class="text-center font-medium text-[#494949]">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents, and large windows that flood the space with natural light.</p>
-          <button class="btn text-black font-extrabold hover:bg-teal-500 border-none rounded-full bg-[#abef5f80]">View Details <span class="bg-[#ABEF5F] rounded-full  p-2 mr-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M12.0109 2.10278L1.00728 13.0991" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg></span></button>
-         </div>
+        <ul class="hidden space-x-4 md:hidden lg:inline-flex">
+          <li><a href="">Home</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">Portfolio</a></li>
+          <li><a href="">Blogs</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+        <div class="hidden lg:inline-flex space-x-4 items-center">
+          <span class="cursor-pointer"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+            >
+              <path
+                d="M17.5075 17.5098L22.006 22.0113"
+                stroke="#737373"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M20.0096 11.0104C20.0113 6.03982 15.9832 2.00904 11.0126 2.00739C6.04207 2.00573 2.01129 6.03383 2.00964 11.0044C2.00799 15.975 6.03609 20.0057 11.0066 20.0074C15.9772 20.009 20.008 15.981 20.0096 11.0104Z"
+                stroke="#737373"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              /></svg
+          ></span>
+          <span class="cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+            >
+              <path
+                d="M8.00795 16.028L15.2711 16.0304C19.7587 16.0319 20.4422 13.2129 21.2713 9.1015C21.5104 7.91561 21.63 7.32267 21.3431 6.92751C21.0561 6.53235 20.5058 6.53216 19.4052 6.5318L6.01111 6.52734"
+                stroke="#737373"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M8.00795 16.0282L5.39083 3.54225C5.16855 2.65184 4.36878 2.02698 3.45105 2.02668L2.5126 2.02637"
+                stroke="#737373"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M8.88797 16.0283L8.47653 16.0282C7.11318 16.0277 6.00758 17.1786 6.00711 18.5987C6.00703 18.8354 6.19117 19.0274 6.4184 19.0275L17.507 19.0312"
+                stroke="#737373"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.506 22.0288C11.3344 22.0291 12.0062 21.3577 12.0065 20.5293C12.0067 19.7009 11.3354 19.0291 10.507 19.0288C9.67853 19.0285 9.00673 19.6999 9.00646 20.5283C9.00618 21.3567 9.67753 22.0285 10.506 22.0288Z"
+                stroke="#737373"
+                stroke-width="1.5"
+              />
+              <path
+                d="M17.506 22.0313C18.3344 22.0315 19.0062 21.3602 19.0065 20.5318C19.0067 19.7033 18.3354 19.0315 17.507 19.0313C16.6785 19.031 16.0067 19.7023 16.0065 20.5308C16.0062 21.3592 16.6775 22.031 17.506 22.0313Z"
+                stroke="#737373"
+                stroke-width="1.5"
+              />
+            </svg>
+          </span>
+          <button
+            class="btn text-black font-extrabold hover:bg-teal-500 border-none rounded-full bg-[#ABEF5F]"
+          >
+            Book Consult
+            <span class="bg-black rounded-full p-2 mr-2.5"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+              >
+                <path
+                  d="M12.0109 2.10278L1.00728 13.0991"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+          </button>
+        </div>
+        <span
+          class="sm:block lg:hidden bg-white rounded-full p-2 border-[#737373] border-2"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M3.74207 6.75781H20.2421M3.74207 12.0078H20.2421M3.74207 17.2578H20.2421"
+              stroke="black"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+        ></span>
+      </nav>
+      <!-- banner  -->
+      <div class="flex flex-col space-y-6 justify-center items-center mt-14">
+        <img
+          src="./assets/banner.png"
+          alt=""
+          srcset=""
+          class="max-w-full lg:max-w-max h-auto"
+        />
+        <h1
+          class="max-w-screen-lg font-extrabold text-5xl lg:text-6xl text-center text-[#212121]"
+        >
+          A barn house of this design has a striking appearance
+        </h1>
+        <p class="text-center font-medium text-[#494949]">
+          The barn house captivates with its blend of rustic charm and modern
+          sophistication, featuring weathered wood, sleek metal accents, and
+          large windows that flood the space with natural light.
+        </p>
+        <button
+          class="btn text-black font-extrabold hover:bg-teal-500 border-none rounded-full bg-[#abef5f80]"
+        >
+          View Details
+          <span class="bg-[#ABEF5F] rounded-full p-2 mr-2.5"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+            >
+              <path
+                d="M12.0109 2.10278L1.00728 13.0991"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg
+          ></span>
+        </button>
+      </div>
     </header>
     <!-- Thoughtful section  -->
-<section class="my-20 bg-[#F4F4F4] pb-20">
-  <div class="w-4/5 mx-auto flex flex-col lg:flex-row gap-9 py-20">
-    <div class="w-full lg:w-2/3 flex flex-col items-center lg:items-start gap-5">
-      <button class="w-32 flex  items-center font-bold text-black bg-white px-2 py-2 rounded-3xl"><span class="mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <path d="M16.5564 9.00278H1.00002" stroke="#494949" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M12.9279 4.14623C12.9279 4.14623 17.2472 7.79392 17.2472 9.00301C17.2472 10.212 12.9278 13.8597 12.9278 13.8597" stroke="#494949" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg></span> About Us</button>
+    <section class="my-20 bg-[#F4F4F4] pb-20">
+      <div class="w-4/5 mx-auto flex flex-col lg:flex-row gap-9 py-20">
+        <div
+          class="w-full lg:w-2/3 flex flex-col items-center lg:items-start gap-5"
+        >
+          <button
+            class="w-32 flex items-center font-bold text-black bg-white px-2 py-2 rounded-3xl"
+          >
+            <span class="mr-3"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M16.5564 9.00278H1.00002"
+                  stroke="#494949"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M12.9279 4.14623C12.9279 4.14623 17.2472 7.79392 17.2472 9.00301C17.2472 10.212 12.9278 13.8597 12.9278 13.8597"
+                  stroke="#494949"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+            About Us
+          </button>
 
-      <h1 class="text-2xl text-center lg:text-left text-black leading-tight font-extrabold ">We design thoughtful, liveable spaces</h1>
-      <p class="text-base text-center lg:text-left font-medium text-[#494949]">The barn house captivates with its blend of rustic charm and 
-        modern sophistication, featuring weathered wood, sleek metal accents.</p>
-     <div class="flex gap-6 items-center p-6 bg-white rounded-2xl ">
-      <img class="max-w-full h-auto" src="./assets/commercial.png" alt="" srcset="">
-      <div>
-        <p class="font-extrabold text-[#494949] text-xl">Commercial</p>
-        <p class="font-medium text-base lg:pr-20">The barn house captivates with its blend of rustic charm and modern.</p>
+          <h1
+            class="text-2xl text-center lg:text-left text-black leading-tight font-extrabold"
+          >
+            We design thoughtful, liveable spaces
+          </h1>
+          <p
+            class="text-base text-center lg:text-left font-medium text-[#494949]"
+          >
+            The barn house captivates with its blend of rustic charm and modern
+            sophistication, featuring weathered wood, sleek metal accents.
+          </p>
+          <div class="flex gap-6 items-center p-6 bg-white rounded-2xl">
+            <img
+              class="max-w-full h-auto"
+              src="./assets/commercial.png"
+              alt=""
+              srcset=""
+            />
+            <div>
+              <p class="font-extrabold text-[#494949] text-xl">Commercial</p>
+              <p class="font-medium text-base lg:pr-20">
+                The barn house captivates with its blend of rustic charm and
+                modern.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-center p-6 bg-white rounded-2xl">
+            <img
+              class="max-w-full h-auto"
+              src="./assets/residential.png"
+              alt=""
+              srcset=""
+            />
+            <div>
+              <p class="font-extrabold text-[#494949] text-xl">Residential</p>
+              <p class="font-medium text-base lg:pr-20">
+                The barn house captivates with its blend of rustic charm and
+                modern.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- image -->
+        <div class="">
+          <img
+            class="w-full h-auto lg:h-full object-fill"
+            src="./assets/Rectangle.png"
+            alt=""
+            srcset=""
+          />
+        </div>
       </div>
-     </div>
-     <div class="flex gap-6 items-center p-6 bg-white rounded-2xl ">
-      <img class="  max-w-full h-auto " src="./assets/residential.png" alt="" srcset="">
-      <div>
-        <p class="font-extrabold text-[#494949] text-xl">Residential</p>
-        <p class="font-medium text-base lg:pr-20">The barn house captivates with its blend of rustic charm and modern.</p>
+
+      <!-- Works -->
+      <div class="w-4/5 lg:w-1/2 mx-auto flex items-center flex-col gap-5 mb-8">
+        <button
+          class="flex items-center font-bold text-black bg-white px-4 py-2 rounded-3xl"
+        >
+          <span class="mr-3"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
+              <path
+                d="M16.5564 9.00278H1.00002"
+                stroke="#494949"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M12.9279 4.14623C12.9279 4.14623 17.2472 7.79392 17.2472 9.00301C17.2472 10.212 12.9278 13.8597 12.9278 13.8597"
+                stroke="#494949"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg
+          ></span>
+          How we works
+        </button>
+        <h2 class="text-4xl text-black font-extrabold">Our Works Process</h2>
+        <p class="text-center text-[#494949] font-medium">
+          The barn house captivates with its blend of rustic charm and modern
+          sophistication, featuring weathered wood, sleek metal accents.
+        </p>
       </div>
-     </div>
-
-    </div>
-    <!-- image -->
-     <div class="">
-      <img class=" w-full h-auto lg:h-full object-fill " src="./assets/Rectangle.png" alt="" srcset="">
-     </div>
-  </div>
-
-  <!-- Works -->
-   <div class="w-4/5 lg:w-1/2 mx-auto flex items-center flex-col gap-5 mb-8 ">
-    <button class=" flex items-center font-bold text-black bg-white px-4 py-2 rounded-3xl"><span class="mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path d="M16.5564 9.00278H1.00002" stroke="#494949" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M12.9279 4.14623C12.9279 4.14623 17.2472 7.79392 17.2472 9.00301C17.2472 10.212 12.9278 13.8597 12.9278 13.8597" stroke="#494949" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg></span> How we works</button>
-    <h2 class="text-4xl text-black font-extrabold">Our Works Process</h2>
-    <p class="text-center text-[#494949] font-medium">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.</p>
-   </div>
-   <div class="w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 ">
+      <div class="w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
         <div class="bg-[#E7C1D3] p-5 gap-7 rounded-2xl">
-          <img src="./assets/concept.png" alt="">
+          <img src="./assets/concept.png" alt="" />
           <p class="font-extrabold text-xl text-[#1c1c1c]">Concept</p>
-          <p class="font-medium text-[#494949]  pr-4 lg:pr-0">The barn house captivates with its blend of rustic charm and modern.</p>
+          <p class="font-medium text-[#494949] pr-4 lg:pr-0">
+            The barn house captivates with its blend of rustic charm and modern.
+          </p>
         </div>
         <div class="bg-[#EFDA6E] p-5 gap-7 rounded-2xl">
-          <img src="./assets/flow-chart.png" alt="">
+          <img src="./assets/flow-chart.png" alt="" />
           <p class="font-extrabold text-xl text-[#1c1c1c]">Design Process</p>
-          <p class="font-medium text-[#494949] pr-4 lg:pr-0">The barn house captivates with its blend of rustic charm and modern.</p>
+          <p class="font-medium text-[#494949] pr-4 lg:pr-0">
+            The barn house captivates with its blend of rustic charm and modern.
+          </p>
         </div>
         <div class="bg-[#A4DAC3] p-5 gap-7 rounded-2xl">
-          <img src="./assets/vision.png" alt="">
+          <img src="./assets/vision.png" alt="" />
           <p class="font-extrabold text-xl text-[#1c1c1c]">Super Vision</p>
-          <p class="font-medium text-[#494949] pr-4">The barn house captivates with its blend of rustic charm and modern.</p>
+          <p class="font-medium text-[#494949] pr-4">
+            The barn house captivates with its blend of rustic charm and modern.
+          </p>
         </div>
         <div class="bg-[#77AAEA] p-5 gap-7 rounded-2xl">
-          <img src="./assets/budget-planning.png" alt="">
+          <img src="./assets/budget-planning.png" alt="" />
           <p class="font-extrabold text-xl text-[#1c1c1c]">Budget planning</p>
-          <p class="font-medium text-[#494949] pr-4 lg:pr-0">The barn house captivates with its blend of rustic charm and modern.</p>
+          <p class="font-medium text-[#494949] pr-4 lg:pr-0">
+            The barn house captivates with its blend of rustic charm and modern.
+          </p>
         </div>
-       
-      
-   </div>
-</section>
+      </div>
+    </section>
 
-<!-- ----------Portfolio --------->
-<div class="w-4/5 mx-auto">
-  <div class="w-full lg:w-1/2 flex flex-col items-center gap-4 mx-auto text-center mb-8">
+    <!-- ----------Portfolio --------->
+    <div class="w-4/5 mx-auto">
+      <div
+        class="w-full lg:w-1/2 flex flex-col items-center gap-4 mx-auto text-center mb-8"
+      >
+        <button
+          class="flex items-center font-bold text-black bg-[#ABEF5F33] px-4 py-2 rounded-3xl"
+        >
+          <span class="mr-3"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
+              <path
+                d="M16.5564 9.00278H1.00002"
+                stroke="#494949"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M12.9279 4.14623C12.9279 4.14623 17.2472 7.79392 17.2472 9.00301C17.2472 10.212 12.9278 13.8597 12.9278 13.8597"
+                stroke="#494949"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg
+          ></span>
+          Explore our Latest works
+        </button>
+        <h1 class="text-black font-extrabold text-2xl lg:text-4xl">
+          Our Latest Portfolio
+        </h1>
+        <p class="text-[#494949] font-medium text-base text-center">
+          The barn house captivates with its blend of rustic charm and modern
+          sophistication, featuring weathered wood, sleek metal accents.
+        </p>
+      </div>
+
+      <!-- image part -->
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+        <div
+          class="col-span-12 lg:col-span-8 flex flex-col lg:flex-row gap-4 border border-[#E9E9E9] rounded-2xl p-4"
+        >
+          <img class="w-full h-auto" src="./assets/img1.png" alt="" />
+          <div class="flex flex-col items-start justify-between">
+            <h4 class="text-2xl text-black font-extrabold">Commercial</h4>
+            <p class="font-medium text-base">
+              The barn house captivates with its blend of rustic charm and
+              modern. The barn house captivates with its blend of rustic charm
+              and modern .
+            </p>
+            <button
+              class="btn text-black font-extrabold text-base hover:bg-teal-500 border-none rounded-full bg-white"
+            >
+              View Details
+              <span class="bg-[#ABEF5F] rounded-full p-1 mr-2.5"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                >
+                  <path
+                    d="M12.0109 2.10278L1.00728 13.0991"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+              ></span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="col-span-12 lg:col-span-4 border border-[#E9E9E9] rounded-2xl p-4"
+        >
+          <img
+            class="w-full h-full object-fill"
+            src="./assets/img2.png"
+            alt=""
+          />
+        </div>
+
+        <div
+          class="col-span-12 lg:col-span-3 border border-[#E9E9E9] rounded-2xl p-4"
+        >
+          <img class="w-full h-full" src="./assets/img3.png" alt="" />
+        </div>
+
+        <div
+          class="col-span-12 lg:col-span-6 flex flex-col lg:flex-row gap-4 border border-[#E9E9E9] rounded-2xl p-4"
+        >
+          <img class="w-full h-auto" src="./assets/img4.png" alt="" />
+          <div class="flex flex-col items-start justify-between">
+            <h4 class="text-2xl text-black font-extrabold">Commercial</h4>
+            <p class="font-medium text-base">
+              The barn house captivates with its blend of rustic charm and
+              modern.
+            </p>
+            <button
+              class="btn text-black font-extrabold text-base hover:bg-teal-500 border-none rounded-full bg-white"
+            >
+              View Details
+              <span class="bg-[#ABEF5F] rounded-full p-1 mr-2.5"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                >
+                  <path
+                    d="M12.0109 2.10278L1.00728 13.0991"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+              ></span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="col-span-12 lg:col-span-3 border border-[#E9E9E9] rounded-2xl p-4"
+        >
+          <img class="w-full h-full" src="./assets/img5.png" alt="" srcset="" />
+        </div>
+      </div>
+    </div>
+
+<!-- Article and News section  -->
+
+
+<div class="w-full mx-auto mt-14 py-10 bg-[#F4F4F4]">
+  <div class="w-4/5  lg:w-1/2 flex flex-col items-center gap-4 mx-auto text-center mb-8">
     <button class=" flex items-center font-bold text-black bg-[#ABEF5F33] px-4 py-2 rounded-3xl"><span class="mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
       <path d="M16.5564 9.00278H1.00002" stroke="#494949" stroke-width="1.5" stroke-linecap="round"/>
       <path d="M12.9279 4.14623C12.9279 4.14623 17.2472 7.79392 17.2472 9.00301C17.2472 10.212 12.9278 13.8597 12.9278 13.8597" stroke="#494949" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg></span> Explore our Latest works</button> 
-    <h1 class="text-black font-extrabold text-2xl lg:text-4xl">Our Latest Portfolio</h1>
+    </svg></span>Rinterio News</button> 
+    <h1 class="text-black font-extrabold text-2xl lg:text-4xl">Read Our Articles and News</h1>
     <p class="text-[#494949] font-medium text-base text-center">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.</p>
   </div>
+
+<section class="w-4/5 mx-auto flex flex-col lg:flex-row gap-6">
+  <div  class="p-6 bg-white rounded-2xl">
+    <img class="w-full h-auto" src="./assets/article1.png" alt="" srcset="">
+    <div class="flex gap-3 items-center my-5">
+      <span ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+        <path d="M18 2.46426V4.46426M6 2.46426V4.46426" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.9955 13.4643H12.0045M11.9955 17.4643H12.0045M15.991 13.4643H16M8 13.4643H8.00897M8 17.4643H8.00897" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.5 8.46426H20.5" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.5 12.7075C2.5 8.3502 2.5 6.17154 3.75212 4.8179C5.00424 3.46426 7.01949 3.46426 11.05 3.46426H12.95C16.9805 3.46426 18.9958 3.46426 20.2479 4.8179C21.5 6.17154 21.5 8.3502 21.5 12.7075V13.2211C21.5 17.5784 21.5 19.757 20.2479 21.1107C18.9958 22.4643 16.9805 22.4643 12.95 22.4643H11.05C7.01949 22.4643 5.00424 22.4643 3.75212 21.1107C2.5 19.757 2.5 17.5784 2.5 13.2211V12.7075Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 8.46426H21" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></span>
+  <p>  July14, 2024</p>
+  <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+    <path d="M12.0063 22.4643C17.5292 22.4643 22.0063 17.9871 22.0063 12.4643C22.0063 6.94142 17.5292 2.46426 12.0063 2.46426C6.4835 2.46426 2.00635 6.94142 2.00635 12.4643C2.00635 17.9871 6.4835 22.4643 12.0063 22.4643Z" stroke="#737373" stroke-width="1.5"/>
+    <path d="M7.50635 17.4643C9.83805 15.0221 14.1495 14.9071 16.5063 17.4643M14.5014 9.96426C14.5014 11.345 13.3805 12.4643 11.9978 12.4643C10.6152 12.4643 9.49432 11.345 9.49432 9.96426C9.49432 8.58355 10.6152 7.46426 11.9978 7.46426C13.3805 7.46426 14.5014 8.58355 14.5014 9.96426Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+  </svg></span>
+  <p> By Admin</p>
+    </div>
+
+    <div
+    class="flex flex-col lg:flex-row gap-4 "
+  >
+    <div class="flex flex-col items-start justify-between">
+      <h4 class="text-lg text-black font-extrabold">How to choose the furniture right  of your home.</h4>
+      <p class="font-medium text-sm">
+        The barn house captivates with its blend of rustic charm and
+        modern. The barn house captivates with its blend of rustic charm
+        and modern .
+      </p>
+      <button
+        class="btn text-black font-extrabold text-base hover:bg-teal-500 border-none rounded-full bg-white"
+      >
+        Read More
+        <span class="bg-[#ABEF5F] rounded-full p-1 mr-2.5"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+            <path
+              d="M12.0109 2.10278L1.00728 13.0991"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+        ></span>
+      </button>
+    </div>
+  </div>
+  
+  </div>
+  <div class="p-6 bg-white rounded-2xl">
+    <img class="w-full h-auto" src="./assets/article2.png" alt="" srcset="">
+    <div class="flex gap-3 items-center my-5">
+      <span ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+        <path d="M18 2.46426V4.46426M6 2.46426V4.46426" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.9955 13.4643H12.0045M11.9955 17.4643H12.0045M15.991 13.4643H16M8 13.4643H8.00897M8 17.4643H8.00897" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.5 8.46426H20.5" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.5 12.7075C2.5 8.3502 2.5 6.17154 3.75212 4.8179C5.00424 3.46426 7.01949 3.46426 11.05 3.46426H12.95C16.9805 3.46426 18.9958 3.46426 20.2479 4.8179C21.5 6.17154 21.5 8.3502 21.5 12.7075V13.2211C21.5 17.5784 21.5 19.757 20.2479 21.1107C18.9958 22.4643 16.9805 22.4643 12.95 22.4643H11.05C7.01949 22.4643 5.00424 22.4643 3.75212 21.1107C2.5 19.757 2.5 17.5784 2.5 13.2211V12.7075Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 8.46426H21" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></span>
+  <p>  July14, 2024</p>
+  <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+    <path d="M12.0063 22.4643C17.5292 22.4643 22.0063 17.9871 22.0063 12.4643C22.0063 6.94142 17.5292 2.46426 12.0063 2.46426C6.4835 2.46426 2.00635 6.94142 2.00635 12.4643C2.00635 17.9871 6.4835 22.4643 12.0063 22.4643Z" stroke="#737373" stroke-width="1.5"/>
+    <path d="M7.50635 17.4643C9.83805 15.0221 14.1495 14.9071 16.5063 17.4643M14.5014 9.96426C14.5014 11.345 13.3805 12.4643 11.9978 12.4643C10.6152 12.4643 9.49432 11.345 9.49432 9.96426C9.49432 8.58355 10.6152 7.46426 11.9978 7.46426C13.3805 7.46426 14.5014 8.58355 14.5014 9.96426Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+  </svg></span>
+  <p> By Admin</p>
+    </div>
+
+    <div
+    class="flex flex-col lg:flex-row gap-4"
+  >
+    <div class="flex flex-col items-start justify-between">
+      <h4 class="text-lg text-black font-extrabold">How to choose the furniture right  of your home.</h4>
+      <p class="font-medium text-sm">
+        The barn house captivates with its blend of rustic charm and
+        modern. The barn house captivates with its blend of rustic charm
+        and modern .
+      </p>
+      <button
+        class="btn text-black font-extrabold text-base hover:bg-teal-500 border-none rounded-full bg-white"
+      >
+        Read More
+        <span class="bg-[#ABEF5F] rounded-full p-1 mr-2.5"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+            <path
+              d="M12.0109 2.10278L1.00728 13.0991"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+        ></span>
+      </button>
+    </div>
+  </div>
  
-  <!-- image part -->
-
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
-    <div class="col-span-12 lg:col-span-8 flex flex-col lg:flex-row gap-4 border-2 border-[#E9E9E9]  rounded-2xl p-4">
-      <img class="w-full h-auto" src="./assets/img1.png" alt="">
-      <div class="flex flex-col items-start justify-between">
-        <h4 class="text-2xl text-black font-extrabold ">Commercial</h4>
-        <p class="font-medium text-base">The barn house captivates with its blend of rustic charm and modern. The barn house captivates with its blend of rustic charm and modern .</p>
-        <button class="btn text-black font-extrabold text-base hover:bg-teal-500 border-none rounded-full bg-white">View Details <span class="bg-[#ABEF5F] rounded-full  p-1 mr-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M12.0109 2.10278L1.00728 13.0991" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg></span></button>
-      </div>
+  </div>
+  <div  class="p-6 bg-white rounded-2xl">
+    <img class="w-full h-auto" src="./assets/article3.png" alt="" srcset="">
+    <div class="flex gap-3 items-center my-5">
+      <span ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+        <path d="M18 2.46426V4.46426M6 2.46426V4.46426" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.9955 13.4643H12.0045M11.9955 17.4643H12.0045M15.991 13.4643H16M8 13.4643H8.00897M8 17.4643H8.00897" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.5 8.46426H20.5" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.5 12.7075C2.5 8.3502 2.5 6.17154 3.75212 4.8179C5.00424 3.46426 7.01949 3.46426 11.05 3.46426H12.95C16.9805 3.46426 18.9958 3.46426 20.2479 4.8179C21.5 6.17154 21.5 8.3502 21.5 12.7075V13.2211C21.5 17.5784 21.5 19.757 20.2479 21.1107C18.9958 22.4643 16.9805 22.4643 12.95 22.4643H11.05C7.01949 22.4643 5.00424 22.4643 3.75212 21.1107C2.5 19.757 2.5 17.5784 2.5 13.2211V12.7075Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 8.46426H21" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></span>
+  <p>  July14, 2024</p>
+  <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+    <path d="M12.0063 22.4643C17.5292 22.4643 22.0063 17.9871 22.0063 12.4643C22.0063 6.94142 17.5292 2.46426 12.0063 2.46426C6.4835 2.46426 2.00635 6.94142 2.00635 12.4643C2.00635 17.9871 6.4835 22.4643 12.0063 22.4643Z" stroke="#737373" stroke-width="1.5"/>
+    <path d="M7.50635 17.4643C9.83805 15.0221 14.1495 14.9071 16.5063 17.4643M14.5014 9.96426C14.5014 11.345 13.3805 12.4643 11.9978 12.4643C10.6152 12.4643 9.49432 11.345 9.49432 9.96426C9.49432 8.58355 10.6152 7.46426 11.9978 7.46426C13.3805 7.46426 14.5014 8.58355 14.5014 9.96426Z" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+  </svg></span>
+  <p> By Admin</p>
     </div>
 
-    <div class="col-span-12 lg:col-span-4 border-2 border-[#E9E9E9]  rounded-2xl p-4">
-      <img class="w-full h-full object-fill " src="./assets/img2.png" alt="">
+    <div
+    class="flex flex-col lg:flex-row gap-4"
+  >
+    <div class="flex flex-col items-start justify-between">
+      <h4 class="text-lg text-black font-extrabold">How to choose the furniture right  of your home.</h4>
+      <p class="font-medium text-sm">
+        The barn house captivates with its blend of rustic charm and
+        modern. The barn house captivates with its blend of rustic charm
+        and modern .
+      </p>
+      <button
+        class="btn text-black font-extrabold text-base hover:bg-teal-500 border-none rounded-full bg-white"
+      >
+        Read More
+        <span class="bg-[#ABEF5F] rounded-full p-1 mr-2.5"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+            <path
+              d="M12.0109 2.10278L1.00728 13.0991"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+        ></span>
+      </button>
     </div>
+  </div>
 
-    <div class="col-span-12 lg:col-span-3 border-2 border-[#E9E9E9]  rounded-2xl p-4">
-      <img class="w-full h-full" src="./assets/img3.png" alt="">
-    </div>
+    
+  </div>
 
-    <div class="col-span-12 lg:col-span-6 flex flex-col lg:flex-row gap-4 border-2 border-[#E9E9E9]  rounded-2xl p-4">
-      <img class="w-full h-auto" src="./assets/img4.png" alt="">
-      <div class="flex flex-col items-start justify-between">
-        <h4 class="text-2xl text-black font-extrabold ">Commercial</h4>
-        <p class="font-medium text-base">The barn house captivates with its blend of rustic charm and modern.</p>
-        <button class="btn text-black font-extrabold text-base hover:bg-teal-500 border-none rounded-full bg-white">View Details <span class="bg-[#ABEF5F] rounded-full  p-1 mr-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M12.0109 2.10278L1.00728 13.0991" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M6.01123 1.23212C6.01123 1.23212 11.6449 0.759102 12.4996 1.6143C13.3542 2.4695 12.8773 8.10289 12.8773 8.10289" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg></span></button>
-      </div>
-    </div>
 
-    <div class="col-span-12 lg:col-span-3 border-2 border-[#E9E9E9]  rounded-2xl p-4">
-      <img class="w-full h-full" src="./assets/img5.png" alt="" srcset="">
-    </div>
+
+</section>
 
   </div>
 
-</div>
-
-</body>
+  </body>
 </html>
